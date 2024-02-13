@@ -17,6 +17,9 @@ pipeline {
                     input message:'Approve PRODUCTION Deployment?'
                 }
                 build job: 'Deploy-Application-Production-Environment'
+            steps {
+                mail bcc: '', body: 'Bekleyen işlem var', cc: '', from: '', replyTo: '', subject: 'Info', to: 'mfaktasit@gmail.com'
+            }
             }
         }
     }
